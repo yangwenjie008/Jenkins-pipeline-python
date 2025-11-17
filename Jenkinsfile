@@ -4,7 +4,7 @@ pipeline {
 
 
     environment {
-        PATH = "/opt/homebrew/opt/python@3.14:${env.PATH}"
+        PATH = "/usr/bin/python3:${env.PATH}"
     }
     
     stages {
