@@ -1,5 +1,9 @@
 pipeline {
     agent any
+
+    environment {
+        PATH = "/opt/homebrew/opt/python@3.14:${env.PATH}"
+    }
     
     stages {
         stage('Setup') {
