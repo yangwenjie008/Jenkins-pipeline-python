@@ -1,0 +1,11 @@
+{
+  "jenkins": {
+    "url": "http://localhost:8080",
+    "username": "admin",
+    "password": "admin"
+  },
+  "pipeline": {
+    "repository": "https://github.com/your-org/your-repo.git",
+    "branch": "main"
+  }
+}
