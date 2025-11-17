@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     echo 'Building the application'
-                    sh 'python scripts/build.py'
+                    sh 'python3 scripts/build.py'
                 }
             }
         }
