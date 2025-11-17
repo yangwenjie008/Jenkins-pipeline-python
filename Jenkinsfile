@@ -4,10 +4,30 @@ pipeline {
 
 
     environment {
-        PATH = "/usr/bin/python3:${env.PATH}"
+        PATH = "/usr/bin/python3:$PATH"
     }
     
     stages {
+             stage('Environment Check') {
+            steps {
+                sh '''
+                    echo "Current PATH:"
+                    echo $PATH
+                    
+                    echo "Home directory:"
+                    echo $HOME
+                    
+                    echo "Who am I:"
+                    whoami
+                    
+                    echo "Python3 location:"
+                    which python3
+                    
+                    echo "Available Python versions:"
+                    ls -la /usr/bin/python*
+                '''
+            }
+        }
         stage('Setup') {
             steps {
                 script {
