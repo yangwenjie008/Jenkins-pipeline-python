@@ -13,7 +13,7 @@ pipeline {
                 script {
                     sh 'PATH'
                     echo 'Setting up the environment'
-                    sh 'python --version'
+                    sh 'python3 --version'
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     echo 'Running tests'
-                    sh 'python scripts/test.py'
+                    sh 'python3 scripts/test.py'
                 }
             }
             post {
@@ -48,7 +48,7 @@ pipeline {
             steps {
                 script {
                     echo 'Deploying application'
-                    sh 'python scripts/deploy.py'
+                    sh 'python3 scripts/deploy.py'
                 }
             }
         }
@@ -58,13 +58,13 @@ pipeline {
         success {
             script {
                 echo 'Pipeline completed successfully'
-                sh 'python scripts/notify.py success'
+                sh 'python3 scripts/notify.py success'
             }
         }
         failure {
             script {
                 echo 'Pipeline failed'
-                sh 'python scripts/notify.py failure'
+                sh 'python3 scripts/notify.py failure'
             }
         }
     }
