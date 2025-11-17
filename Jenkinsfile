@@ -31,7 +31,6 @@ pipeline {
         stage('Setup') {
             steps {
                 script {
-                    sh 'PATH'
                     echo 'Setting up the environment'
                     sh 'python3 --version'
                 }
